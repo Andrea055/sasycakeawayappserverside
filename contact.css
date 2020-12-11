@@ -1,0 +1,86 @@
+.form-contact {
+    max-width: 600px; 
+    margin:0 auto; 
+    text-align:left; 
+    border: 4px double #ccc; 
+    padding: 10px; 
+    background-color: transparent;
+    overflow:auto;
+}
+.field {
+    width:100%;
+    -webkit-box-sizing:border-box;
+            box-sizing:border-box;
+    height:30px;
+}
+.form-text {
+    width:100%;
+    -webkit-box-sizing:border-box;
+            box-sizing:border-box;
+}
+.button-container {
+    padding: 0 0 20px;
+    max-width: 220px;
+    margin: 0 auto;
+}
+.button {
+    width:100px;
+    font-size:0.9em;
+    font-weight:bold;
+    background-color:#e6e6e6;
+    padding:4px 0;
+    cursor: pointer;
+}
+.star {
+    color:#ff0000;
+}
+.privacy p {
+    /*padding: 0 12px;*/
+}
+.privacy a {
+    color: #2C80FF;
+}
+.agree {
+    /*padding: 0 12px;*/
+    font-size:  1.0rem;
+}
+.checkbox {
+    height: 25px;
+    width: 25px;
+    vertical-align: middle;
+    margin: 0;
+    cursor: pointer;
+}
+.confirm {
+    font-size: 1.2rem; 
+    border: 2px solid #CCCCCC; 
+    padding: 12px;
+    text-align: center;
+    /*! font-weight: bold; */
+    font-family: 'arial', sans-serif;
+}
+.back {
+    background-color: #496eda;
+    color: #fff;
+    padding: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.p-captcha {
+    width: 158px; 
+    border: 1px solid #cccccc; 
+    padding: 4px;
+}
+.img-captcha {
+    vertical-align: middle;
+}
+.a-captcha {
+    cursor: pointer; 
+    font-size: 2.0rem; 
+    vertical-align: middle; 
+    color: green; 
+    font-weight: bold;
+}
+.span-captcha {
+    font-size: 0.8rem;
+}

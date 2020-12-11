@@ -1,0 +1,66 @@
+
+
+<!DOCTYPE html>
+<html lang=it>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Modulo di contatto</title>
+      <meta name="robots" content="noindex">
+      <link rel="stylesheet" type="text/css" href="./contact.css" />
+   </head>
+   <body>
+      <div style="text align:center;">
+         <form class="form-contact" action="contact.php" method="post" enctype="multipart/form-data" onsubmit="return checkEmail(this)">
+            <p><span class="star">*</span> <span style="font-size:0.8em">Campi obbligatori</span></p>
+            <p><label>Nome e cognome:<span class="star">*</span><br></label><input class="field" type="text" name="name" required /></p>
+            <p><label>E-mail:<span class="star">*</span><br></label><input class="field" type="email" name="email" required /></p>
+            <p><label>Conferma e-mail: <span class="star">*</span><br></label><input class="field" type="email" name="remail" autocomplete="off" required /></p>
+            <p><label>Messaggio: <span class="star">*</span><br></label><textarea class="form-text" rows="15" cols="40" name="message" required ></textarea></p>
+            <!-- trattamento dati (inserire il link al doc di privacy)-->
+            <div class="privacy">
+               <p>Confermi di aver letto e di accettare le modalit&agrave; di trattamento dei tuoi dati personali come descritto nella <a href="" target="_blank">&quot;Privacy policy.&quot;</a>?
+            </div>
+            <div class="agree">
+               <input type="checkbox" class="checkbox" name="agree" value="accetto" required >
+               Confermo <span class="star">*</span>
+            </div>
+            <!-- end trattamento dati -->
+            <!-- filtro anti-spam invisibile-->
+            <input type="text" id="fred" name="fred" style="visibility: hidden;"/>
+            <!-- end filtro anti-spam invisibile-->
+            <!-- filtro anti-spam visibile-->
+            <p class="p-captcha">Antispam: <br><img class="img-captcha" id="captcha" src="./captcha.php" />
+            <a class="a-captcha" onclick="reload()"> &orarr;</a><br>
+            <label><span class="span-captcha">Type the numbers</span></label><br>
+            <input type="text" name="captcha" /></p>
+            <!-- end filtro anti-spam visibile-->
+            <br>
+            <div class="button-container">
+               <input class="button" type="reset" value="Reset">&nbsp;
+               <input class="button" type="submit" value="Send">
+            </div>
+         </form>
+      </div>
+      <!-- script per conferma email -->
+<script>
+    function checkEmail(theForm) {
+    if (theForm.email.value != theForm.remail.value)
+    {
+        alert('Le email non corrispondono/The emails don\'t match!');
+        return false;
+    } else {
+        return true;
+    }
+}
+</script> 
+      <!-- script per reload captcha -->
+    <script>
+            function reload(){
+            document.getElementById("captcha").src= './captcha.php?t=' + (new Date()).getTime();
+            }
+    </script>
+   </body>
+</html>
+
